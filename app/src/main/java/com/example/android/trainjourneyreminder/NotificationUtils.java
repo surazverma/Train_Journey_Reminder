@@ -98,7 +98,7 @@ public static final String NOTIFICATION_CHANNEL_ID = "reminder_notification_chan
         ContentValues contentValues = new ContentValues();
        contentValues.put(TicketContract.TicketEntry.COLUMN_REMINDER_TIME,reminderTime);
         context.getContentResolver().update(TicketContract.TicketEntry.CONTENT_URI.buildUpon().appendPath(ticketID).build(),contentValues, ticketID,null);
-        Toast.makeText(context, "Time updated", Toast.LENGTH_SHORT).show();
+        Toast.makeText(context, R.string.u_time, Toast.LENGTH_SHORT).show();
 
     }
 

@@ -252,7 +252,7 @@ public class TicketInfoActivity extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         getContentResolver().delete(TicketContract.TicketEntry.CONTENT_URI.buildUpon().appendPath(infoTicketID).build(), null, null);
-                        Toast.makeText(TicketInfoActivity.this, "Ticket Deleted", Toast.LENGTH_SHORT).show(); // make sure to delete this toast in future before sub
+                        Toast.makeText(TicketInfoActivity.this, R.string.ticket_deleted, Toast.LENGTH_SHORT).show(); // make sure to delete this toast in future before sub
                         NotificationUtils.cancelReminder(getApplicationContext(), AlarmReceiver.class, infoAlarmId);
                         UpdateWidgetService.startService(getApplicationContext(), null, null, null, null, null, null);
                         activity.finish();
@@ -305,10 +305,10 @@ public class TicketInfoActivity extends AppCompatActivity {
                         getContentResolver().update(TicketContract.TicketEntry.CONTENT_URI.buildUpon().appendPath(ticketId).build(),updatedPassengers,ticketId,null);
                         break;
                     case 220:
-                        Toast.makeText(TicketInfoActivity.this, "FLUSHED PNR", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(TicketInfoActivity.this, R.string.flushed_pnr, Toast.LENGTH_SHORT).show();
                         break;
                     case 221:
-                        Toast.makeText(TicketInfoActivity.this, "INVALID PNR", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(TicketInfoActivity.this, R.string.invalid_pnr, Toast.LENGTH_SHORT).show();
                         break;
                 }
 
@@ -316,7 +316,7 @@ public class TicketInfoActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<PNRInfo> call, Throwable t) {
-                Toast.makeText(TicketInfoActivity.this, "Network Issue, please try again later", Toast.LENGTH_SHORT).show();
+                Toast.makeText(TicketInfoActivity.this, R.string.network_issue_call, Toast.LENGTH_SHORT).show();
             }
         });
 

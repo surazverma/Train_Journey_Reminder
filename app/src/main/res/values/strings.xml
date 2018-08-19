@@ -3,6 +3,7 @@
     <string name="notification_channel_name">Channel</string>
 
 
+    <string name="u_time">Time update</string>
     <string name="pnr_no">PNR No.</string>
     <string name="enter_message">Enter 10 digit PNR</string>
     <string name="search_button_text">Search</string>
@@ -29,5 +30,28 @@
     <string name="class_">CLASS:</string>
     <string name="default_widget_text">Please select a ticket from Upcoming Journey</string>
     <string name="pnr_no_">PNR No. :</string>
+    <string name="enter_pnr">please enter pnr</string>
+    <string name="already_saved">Already saved</string>
+    <string name="save_ticket">Save Ticket?</string>
+    <string name="set_time">Set Time</string>
+    <string name="ticket_saved">Ticket Saved</string>
+    <string name="network_issue">Network issue</string>
+    <string name="success">SUCCESS RETRIEVING</string>
+    <string name="flushed_pnr">Flushed Pnr</string>
+    <string name="invalid_pnr">Invalid Pnr</string>
+    <string name="server_error">Server Error, Please try again After some time</string>
+    <string name="network_error">Something Went Wrong, Please Try Again</string>
+    <string name="pls_select_time">please select Time</string>
+    <string name="database_update">Database Updated</string>
+    <string name="ticket_deleted">Ticket Deleted</string>
+    <string name="network_issue_call">Network Issue, please try again later</string>
+    <string name="separator_description">Separates the boarding point from destination Point</string>
+    <string name="directional_arrow">Directional Arrow</string>
+    <string name="fab_description">Press this button to add ticket</string>
+    <string name="decoration_view">decoration view</string>
+    <string name="delete_button">Delete Button</string>
+    <string name="uj_title">Upcoming Journey</string>
+    <string name="at_title">Add Ticket</string>
+
 
 </resources>

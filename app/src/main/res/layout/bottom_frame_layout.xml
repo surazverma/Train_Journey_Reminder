@@ -30,7 +30,7 @@
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:background="@color/colorAccent"
-
+        android:contentDescription="@string/separator_description"
         app:layout_constraintBottom_toTopOf="@+id/info_dest_code"
         app:layout_constraintLeft_toRightOf="@+id/info_board_code"
         app:layout_constraintRight_toLeftOf="@+id/info_dest_code"
@@ -110,8 +110,9 @@
         android:id="@+id/info_destination_point"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
         android:layout_marginTop="4dp"
-        app:layout_constraintStart_toStartOf="@+id/info_dest_code"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/info_dest_code"
         tools:text="Patna" />
 
@@ -185,6 +186,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:contentDescription="@string/directional_arrow"
         app:layout_constraintBottom_toBottomOf="@+id/info_dest_code"
         app:layout_constraintEnd_toStartOf="@+id/info_dest_code"
         app:layout_constraintStart_toStartOf="@+id/separator_line"

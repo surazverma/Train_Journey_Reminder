@@ -24,6 +24,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.crashlytics.android.Crashlytics;
 import com.example.android.trainjourneyreminder.Adapters.PassengerAdapter;
 import com.example.android.trainjourneyreminder.DataModel.PNRInfo;
 import com.example.android.trainjourneyreminder.DataModel.Passenger;
@@ -126,6 +127,7 @@ public class AddTicket extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_add_ticket);
+        setTitle(getString(R.string.at_title));
         ButterKnife.bind(this);
 
 
@@ -203,12 +205,12 @@ if (savedInstanceState != null){
             @Override
             public void onClick(View v) {
                 if(pnrInput.getText().toString().isEmpty()){
-                    Toast.makeText(getApplicationContext(),"please enter pnr",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), R.string.enter_pnr,Toast.LENGTH_SHORT).show();
 
                 }else{
                     boolean checkInDatabase = checkIfTicketSaved(pnrInput.getText().toString());
                     if (checkInDatabase){
-                        Toast.makeText(AddTicket.this, "Already saved", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(AddTicket.this, R.string.already_saved, Toast.LENGTH_SHORT).show();
                     }else{
 
                         executeSearch(pnrInput.getText().toString());
@@ -228,16 +230,16 @@ if (savedInstanceState != null){
 
        if (searchHappened){
         AlertDialog.Builder builder = new AlertDialog.Builder(AddTicket.this);
-        builder.setTitle("Save Ticket?");
+        builder.setTitle(R.string.save_ticket);
         builder.setPositiveButton("Save", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
 
                boolean result = saveData();
                if (!result){
-                   Toast.makeText(AddTicket.this, "Set Time", Toast.LENGTH_SHORT).show();
+                   Toast.makeText(AddTicket.this, R.string.set_time, Toast.LENGTH_SHORT).show();
                }else{
-                   Toast.makeText(AddTicket.this, "Ticket Saved", Toast.LENGTH_SHORT).show();
+                   Toast.makeText(AddTicket.this, R.string.ticket_saved, Toast.LENGTH_SHORT).show();
                    finish();
                }
 
@@ -278,13 +280,13 @@ if (savedInstanceState != null){
             {boolean returnResult = saveData();
                 if (returnResult){
 
-                    Toast.makeText(this, "Ticket Saved", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, R.string.ticket_saved, Toast.LENGTH_SHORT).show();
                     activity.finish();}
 
             }
             else {
 
-                Toast.makeText(this, "Network issue", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, R.string.network_issue, Toast.LENGTH_SHORT).show();
             }
 
 
@@ -318,7 +320,7 @@ if (savedInstanceState != null){
                 if(pnrInfo.getResponseCode() == 200){
                     searchHappened = true;
                     instanciateViews(pnrInfo);
-                    Toast.makeText(getApplicationContext(),"SUCCESS RETRIEVING",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), R.string.success,Toast.LENGTH_SHORT).show();
 
                 }else
                     {
@@ -326,13 +328,16 @@ if (savedInstanceState != null){
                     switch (networkResponseCode){
 
                         case 220:
-                            Toast.makeText(getApplicationContext(), "Flushed Pnr", Toast.LENGTH_SHORT).show();
+                            Crashlytics.log("Flushed Pnr");
+                            Toast.makeText(getApplicationContext(), R.string.flushed_pnr, Toast.LENGTH_SHORT).show();
                             break;
                         case 221:
-                            Toast.makeText(getApplicationContext(), "Invalid Pnr", Toast.LENGTH_SHORT).show();
+                            Crashlytics.log("Invalid Pnr");
+                            Toast.makeText(getApplicationContext(), R.string.invalid_pnr, Toast.LENGTH_SHORT).show();
                             break;
                         case 404:
-                            Toast.makeText(AddTicket.this, "Server Error, Please try again After some time", Toast.LENGTH_SHORT).show();
+                            Crashlytics.log("Server Error");
+                            Toast.makeText(AddTicket.this, R.string.server_error, Toast.LENGTH_SHORT).show();
                     }
                 }
             }
@@ -340,7 +345,8 @@ if (savedInstanceState != null){
             @Override
             public void onFailure(Call<PNRInfo> call, Throwable t) {
                 searchHappened = false;
-                Toast.makeText(getApplicationContext(),"Something Went Wrong, Please Try Again ",Toast.LENGTH_SHORT).show();
+                Crashlytics.log("Network Failure");
+                Toast.makeText(getApplicationContext(), R.string.network_error,Toast.LENGTH_SHORT).show();
 
             }
         });
@@ -417,7 +423,7 @@ if (savedInstanceState != null){
 
 
         if (reminderTimeString.equals("--:--")){
-            Toast.makeText(this, "please select Time", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.pls_select_time, Toast.LENGTH_SHORT).show();
             return false;
         }else {
             reminderFieldCount = getUniqueCode();

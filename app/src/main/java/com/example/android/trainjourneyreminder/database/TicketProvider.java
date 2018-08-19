@@ -13,6 +13,8 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.widget.Toast;
 
+import com.example.android.trainjourneyreminder.R;
+
 public class TicketProvider extends ContentProvider {
 
     private final static String LOG_TAG =  TicketProvider.class.getSimpleName();
@@ -157,7 +159,7 @@ public class TicketProvider extends ContentProvider {
                selection = TicketContract.TicketEntry.COLUMN_TICKET_ID+"=?";
                selectionArgs = new String[]{String.valueOf(ContentUris.parseId(uri))};
                rowsUpdated = database.update(TicketContract.TicketEntry.TABLE_NAME,values,selection,selectionArgs);
-               Toast.makeText(getContext(), "Database Updated", Toast.LENGTH_SHORT).show();
+               Toast.makeText(getContext(), R.string.database_update, Toast.LENGTH_SHORT).show();
                break;
                default:
                {

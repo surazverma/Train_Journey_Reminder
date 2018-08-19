@@ -34,7 +34,7 @@ public class UpcomingJourney extends AppCompatActivity implements LoaderManager.
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_upcoming_journey);
         ButterKnife.bind(this);
-
+        setTitle(getString(R.string.uj_title));
 
         ticketCursorAdapter = new TicketCursorAdapter(this,null);
         ticketButton.setOnClickListener(new View.OnClickListener() {

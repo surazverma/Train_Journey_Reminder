@@ -83,6 +83,7 @@
         />
 
     <ImageView
+        android:contentDescription="@string/separator_description"
         android:id = "@+id/widget_separator_line"
         android:layout_width="200dp"
         android:layout_height="1dp"
