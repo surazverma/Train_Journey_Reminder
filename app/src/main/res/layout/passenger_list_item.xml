@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/passenger_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/passenger_no"
+        android:textColor="#2d2d2d"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/p_no"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@+id/passenger_label"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="1" />
+
+    <TextView
+        android:id="@+id/cs_label"
+        android:layout_width="wrap_content"
+        android:layout_height="17dp"
+        android:layout_marginTop="4dp"
+        android:text="@string/current_status"
+        android:textColor="#2d2d2d"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bs_label" />
+
+    <TextView
+        android:id="@+id/r_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
+        android:textAllCaps="true"
+        android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@+id/cs_label"
+        app:layout_constraintTop_toBottomOf="@+id/booking_status"
+        tools:text="Rlwl/14" />
+
+    <TextView
+        android:id="@+id/bs_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/booking_status"
+        android:textColor="#000000"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/passenger_label" />
+
+    <TextView
+        android:id="@+id/booking_status"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toEndOf="@+id/bs_label"
+        app:layout_constraintTop_toBottomOf="@+id/p_no"
+        tools:text="RLWL/14" />
+
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+
+    tools:context=".AddTicket">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/pnr_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/pnr_no"
+            android:textColor="#2d2d2d"
+            android:textSize="24sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/pnr_input"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginTop="8dp"
+            android:hint="@string/enter_message"
+            app:layout_constraintStart_toEndOf="@+id/pnr_label"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/search_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="0dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/search_button_text"
+            app:layout_constraintEnd_toEndOf="@+id/pnr_input"
+            app:layout_constraintTop_toBottomOf="@+id/pnr_input" />
+
+
+
+        <android.support.v7.widget.CardView
+            android:elevation="6dp"
+            android:animateLayoutChanges="true"
+            app:cardCornerRadius="10dp"
+            android:id="@+id/ticket_card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/search_button">
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/ticket_box"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/search_button">
+
+                <TextView
+                    android:id="@+id/train_no_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/train_no"
+                    android:textAllCaps="true"
+                    android:textColor="#2d2d2d"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/train_no"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:textAllCaps="true"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toEndOf="@+id/train_no_label"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="12345" />
+
+                <TextView
+                    android:id="@+id/train_name_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/train_name"
+                    android:textAllCaps="true"
+                    android:textColor="#2d2d2d"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="@+id/train_no_label"
+                    app:layout_constraintTop_toBottomOf="@+id/train_no_label" />
+
+                <TextView
+                    android:id="@+id/train_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:textAllCaps="true"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toEndOf="@+id/train_name_label"
+                    app:layout_constraintTop_toBottomOf="@+id/train_no"
+                    tools:text="Shramjeevi Express" />
+
+                <TextView
+                    android:id="@+id/boarding_Station"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="16dp"
+                    android:textAllCaps="true"
+                    android:textSize="32sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/train_name_label"
+                    tools:text="NDLS" />
+
+                <TextView
+                    android:id="@+id/destination_station"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginTop="16dp"
+                    android:textAllCaps="true"
+                    android:textSize="32sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/train_name"
+                    tools:text="PAT" />
+                <ImageView
+                    android:id="@+id/right_arrow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:src="@drawable/ic_round_arrow_forward_ios_24px"
+                    app:layout_constraintBottom_toBottomOf="@+id/destination_station"
+                    app:layout_constraintEnd_toEndOf="@+id/separator_line"
+                    app:layout_constraintStart_toStartOf="@+id/separator_line"
+                    app:layout_constraintTop_toTopOf="@+id/destination_station" />
+
+
+                <ImageView
+                    android:id="@+id/separator_line"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:background="@color/colorAccent"
+
+                    app:layout_constraintBottom_toTopOf="@+id/destination_station"
+                    app:layout_constraintLeft_toRightOf="@+id/boarding_Station"
+                    app:layout_constraintRight_toLeftOf="@+id/destination_station"
+                    app:layout_constraintTop_toBottomOf="@+id/destination_station" />
+
+                <TextView
+                    android:id="@+id/b_station_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/boarding_Station"
+                    tools:text="New Delhi" />
+
+                <TextView
+                    android:id="@+id/doj_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/date_of_journey"
+                    android:textAllCaps="true"
+                    android:textColor="#2d2d2d"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="@+id/train_no_label"
+                    app:layout_constraintTop_toBottomOf="@+id/b_station_name" />
+
+                <TextView
+                    android:id="@+id/date_of_journey"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="0dp"
+                    android:textAllCaps="true"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toEndOf="@+id/doj_label"
+                    app:layout_constraintTop_toTopOf="@+id/doj_label"
+                    tools:text="DD-MM-YY" />
+
+                <TextView
+                    android:id="@+id/passenger_no_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/no_of_passengers"
+                    android:textAllCaps="true"
+                    android:textColor="#2d2d2d"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="@+id/doj_label"
+                    app:layout_constraintTop_toBottomOf="@+id/doj_label" />
+
+                <TextView
+                    android:id="@+id/passenger_no"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:textAllCaps="true"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toEndOf="@+id/passenger_no_label"
+                    app:layout_constraintTop_toBottomOf="@+id/date_of_journey"
+                    tools:text="3" />
+
+                <TextView
+                    android:id="@+id/crs_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/current_reservation_status"
+                    android:textAllCaps="true"
+                    android:textColor="#2d2d2d"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="@+id/passenger_no_label"
+                    app:layout_constraintTop_toBottomOf="@+id/passenger_no_label" />
+
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/passenger_rv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintStart_toStartOf="@+id/crs_label"
+                    app:layout_constraintTop_toBottomOf="@+id/crs_label"
+                    tools:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/class_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/travel_class"
+                    android:textAllCaps="true"
+                    android:textColor="#2d2d2d"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="@+id/passenger_rv"
+                    app:layout_constraintTop_toBottomOf="@+id/passenger_rv" />
+
+                <TextView
+                    android:id="@+id/journey_class"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginTop="0dp"
+                    android:textAllCaps="true"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toEndOf="@+id/class_label"
+                    app:layout_constraintTop_toTopOf="@+id/class_label"
+                    tools:text="Sleeper Class" />
+
+                <LinearLayout
+                    android:id="@+id/reminder_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="8dp"
+                    android:background="#F5F5F5"
+                    android:orientation="vertical"
+                    app:layout_constraintStart_toStartOf="@+id/class_label"
+                    app:layout_constraintTop_toBottomOf="@+id/class_label">
+
+                    <TextView
+                        android:id="@+id/s_reminder_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/set_reminder"
+                        android:textColor="#2d2d2d"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/reminder_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop ="4dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginBottom="8dp"
+
+                        android:text="@string/default_time_view"
+                        android:textSize="16sp"
+                        app:layout_constraintStart_toStartOf="@+id/s_reminder_label"
+                        app:layout_constraintTop_toBottomOf="@+id/s_reminder_label" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/d_station_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="19dp"
+                    android:layout_marginEnd="8dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/destination_station"
+                    tools:text="Patna" />
+            </android.support.constraint.ConstraintLayout>
+        </android.support.v7.widget.CardView>
+
+    </android.support.constraint.ConstraintLayout>
+</ScrollView>

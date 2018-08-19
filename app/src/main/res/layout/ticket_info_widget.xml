@@ -1,0 +1,123 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="#ffffff"
+    android:orientation="vertical"
+    android:id = "@+id/widget_ticket"
+    android:padding="@dimen/widget_margin">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/default_widget_text"
+        android:layout_alignParentTop="true"
+        android:layout_margin="8dp"
+        android:id="@+id/empty_view"/>
+
+    <TextView
+        android:id="@+id/widget_pnr_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart ="8dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/empty_view"
+        android:layout_marginTop="30dp"
+        android:text="@string/pnr"
+        android:textSize="16sp" />
+    <TextView
+        android:id="@+id/widget_doj_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/date_of_journey_caps"
+        android:textSize="16sp"
+        android:layout_marginStart="8dp"
+        android:layout_below="@id/widget_train_name_label"/>
+    <TextView
+        android:id="@+id/widget_doj"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="DD-MM-YYYY"
+        android:layout_toEndOf="@id/widget_doj_label"
+        android:textSize="16sp"
+        android:layout_marginStart="4dp"
+        android:layout_below="@id/widget_train_name_label"/>
+    <TextView
+        android:id="@+id/widget_class_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/class_"
+        android:textSize="16sp"
+        android:layout_below="@id/widget_doj_label"
+        android:layout_marginStart="8dp"/>
+    <TextView
+        android:id="@+id/widget_class_code"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="SL"
+        android:textSize="16sp"
+        android:layout_toEndOf="@id/widget_class_label"
+        android:layout_below="@id/widget_doj_label"
+        android:layout_marginStart="8dp"/>
+
+    <TextView
+        android:id="@+id/widget_pnr_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:layout_marginTop = "30dp"
+        android:layout_marginStart="8dp"
+        android:layout_toEndOf="@+id/widget_pnr_label"
+        tools:text="1234567890" />
+    <TextView
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/widget_bdr_code"
+        tools:text="BDR"
+        android:layout_below  = "@id/widget_pnr_label"
+        android:layout_marginStart="8dp"
+        android:textSize="32sp"
+        />
+
+    <ImageView
+        android:id = "@+id/widget_separator_line"
+        android:layout_width="200dp"
+        android:layout_height="1dp"
+        android:layout_marginStart="8dp"
+        android:layout_toEndOf="@id/widget_bdr_code"
+        android:layout_below="@id/widget_pnr_label"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="20dp"
+        android:background="#000000" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/widget_des_code"
+        tools:text="DES"
+        android:layout_below  = "@id/widget_pnr_label"
+        android:layout_toEndOf="@id/widget_separator_line"
+        android:layout_marginStart="8dp"
+        android:textSize="32sp"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/widget_train_name_label"
+        android:text="@string/train"
+        android:textSize="16sp"
+        android:layout_below="@id/widget_bdr_code"
+        android:layout_marginStart="8dp"/>
+<TextView
+    android:id="@+id/widget_train_name"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    tools:text="abc Express"
+    android:layout_marginStart="4dp"
+    android:layout_toEndOf="@id/widget_train_name_label"
+    android:layout_below="@id/widget_bdr_code"
+    android:textSize="16sp"/>
+
+</RelativeLayout>

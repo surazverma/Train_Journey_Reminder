@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">Train Journey Reminder</string>
+    <string name="notification_channel_name">Channel</string>
+
+
+    <string name="pnr_no">PNR No.</string>
+    <string name="enter_message">Enter 10 digit PNR</string>
+    <string name="search_button_text">Search</string>
+    <string name="train_no">Train No:</string>
+    <string name="train_name">Train Name:</string>
+    <string name="date_of_journey">Date of Journey:</string>
+    <string name="no_of_passengers">No. of passengers:</string>
+    <string name="current_reservation_status">Current Reservation Status :</string>
+    <string name="travel_class">Travel Class :</string>
+    <string name="set_reminder">SET REMINDER</string>
+    <string name="default_time_view">--:--</string>
+    <string name="date_of_journey_caps">DATE OF JOURNEY</string>
+    <string name="journey_class">JOURNEY CLASS :</string>
+    <string name="reservation_status">Reservation Status</string>
+    <string name="reminder_time">REMINDER TIME</string>
+    <string name="number_of_passengers">NUMBER OF PASSENGERS :</string>
+    <string name="refresh">REFRESH</string>
+    <string name="passenger_no">Passenger No:</string>
+    <string name="current_status">Current Status:</string>
+    <string name="booking_status">Booking Status:</string>
+    <string name="pnr">PNR :</string>
+    <string name="train">TRAIN :</string>
+    <string name="doj">DOJ :</string>
+    <string name="class_">CLASS:</string>
+    <string name="default_widget_text">Please select a ticket from Upcoming Journey</string>
+    <string name="pnr_no_">PNR No. :</string>
+
+</resources>

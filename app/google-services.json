@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "559845338629",
+    "firebase_url": "https://train-journey-reminder.firebaseio.com",
+    "project_id": "train-journey-reminder",
+    "storage_bucket": "train-journey-reminder.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:559845338629:android:e0116e5d82c40596",
+        "android_client_info": {
+          "package_name": "com.example.android.trainjourneyreminder"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "559845338629-t0ud7d5ov124oage1oulvv36pp2rthmt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.android.trainjourneyreminder",
+            "certificate_hash": "e22287e81e75fdef54b0f5c9193d393f09d31bba"
+          }
+        },
+        {
+          "client_id": "559845338629-fv7iugnasn9vfqvprfv8s87jtf7cuql2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDetKyFhQ8y4gwPj2rpdrlo2uDplHGaUmg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "559845338629-fv7iugnasn9vfqvprfv8s87jtf7cuql2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

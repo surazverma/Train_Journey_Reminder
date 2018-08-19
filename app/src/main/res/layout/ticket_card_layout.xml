@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+
+    android:layout_marginStart="8dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginEnd="8dp"
+    app:cardCornerRadius="10dp"
+    android:elevation="6dp"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+
+    <android.support.constraint.ConstraintLayout
+       android:layout_marginBottom="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+       <ImageView
+           android:layout_width="match_parent"
+           android:layout_height="64dp"
+           android:id="@+id/background_image_p"
+           android:background="@color/colorPrimary"/>
+
+        <TextView
+
+            android:id="@+id/super_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/pnr"
+            android:letterSpacing="0.033"
+            android:textColor="#ffff"
+            android:textSize="24sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/pnr_number_mc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="16dp"
+            android:letterSpacing="0.033"
+            android:textColor="#ffff"
+            android:textSize="24sp"
+            app:layout_constraintStart_toEndOf="@+id/super_text"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="1234567890" />
+
+        <TextView
+            android:id="@+id/b_code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:letterSpacing="0.007352"
+            android:textSize="34sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/background_image_p"
+            tools:text="BDR" />
+        <ImageView
+            android:id="@+id/separator_line"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="@color/colorAccent"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+
+            app:layout_constraintBottom_toTopOf="@+id/d_code"
+            app:layout_constraintLeft_toRightOf="@+id/b_code"
+            app:layout_constraintRight_toLeftOf="@+id/d_code"
+            app:layout_constraintTop_toBottomOf="@+id/d_code" />
+
+        <ImageView
+            android:id="@+id/right_arrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/ic_round_arrow_forward_ios_24px"
+            app:layout_constraintBottom_toBottomOf="@+id/d_code"
+            app:layout_constraintEnd_toEndOf="@+id/separator_line"
+            app:layout_constraintStart_toStartOf="@+id/separator_line"
+            app:layout_constraintTop_toTopOf="@+id/d_code" />
+        <TextView
+            android:id="@+id/d_code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginTop="8dp"
+            android:letterSpacing="0.007352"
+            android:textSize="34sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/background_image_p"
+            tools:text="DES" />
+
+        <TextView
+            android:id="@+id/t_name_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:textColor="#000000"
+            android:text="@string/train"
+            android:letterSpacing="0.03125"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/b_code" />
+
+        <TextView
+
+            android:id="@+id/t_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="8dp"
+            android:letterSpacing="0.03125"
+            android:textSize="18sp"
+            app:layout_constraintStart_toEndOf="@+id/t_name_label"
+            app:layout_constraintTop_toBottomOf="@+id/d_code"
+            tools:text="Shramjeevi Express" />
+
+        <TextView
+            android:id="@+id/d_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:letterSpacing="0.03125"
+            android:layout_marginTop="8dp"
+            android:text="@string/doj"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/t_name_label" />
+
+        <TextView
+            android:id="@+id/doj"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:textSize="18sp"
+            android:letterSpacing="0.0083"
+            app:layout_constraintStart_toEndOf="@+id/d_label"
+            app:layout_constraintTop_toBottomOf="@+id/t_name"
+            tools:text="24-12-2018" />
+
+        <TextView
+            android:textColor="#000000"
+            android:id="@+id/c_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/class_"
+            android:letterSpacing="0.03125"
+            android:layout_marginBottom="8dp"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/d_label" />
+
+        <TextView
+            android:id="@+id/c_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:textSize="18sp"
+            android:letterSpacing="0.03125"
+            app:layout_constraintStart_toEndOf="@+id/c_label"
+            app:layout_constraintTop_toBottomOf="@+id/doj"
+            tools:text="Sleeper class" />
+
+
+
+    </android.support.constraint.ConstraintLayout>
+
+</android.support.v7.widget.CardView>
