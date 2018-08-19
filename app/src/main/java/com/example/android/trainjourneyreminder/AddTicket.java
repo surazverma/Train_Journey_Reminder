@@ -78,9 +78,9 @@ public class AddTicket extends AppCompatActivity {
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
-        outState.putParcelable("pnr_info",pnrInfo);
-        outState.putBoolean("search_Status",searchHappened);
-        outState.putString("reminder_time",reminderTimeString);
+        outState.putParcelable(getString(R.string.pnr_info),pnrInfo);
+        outState.putBoolean(getString(R.string.search_status_key),searchHappened);
+        outState.putString(getString(R.string.reminder_time_s_key),reminderTimeString);
     }
 
 
@@ -132,52 +132,52 @@ public class AddTicket extends AppCompatActivity {
 
 
 
-        crsLabel.setTypeface(Typeface.createFromAsset(getResources().getAssets(),"Product Sans Regular.ttf"));
+        crsLabel.setTypeface(Typeface.createFromAsset(getResources().getAssets(),getString(R.string.product_sans)));
 
-        bStationName.setTypeface(Typeface.createFromAsset(getResources().getAssets(),"Product Sans Regular.ttf"));
+        bStationName.setTypeface(Typeface.createFromAsset(getResources().getAssets(),getString(R.string.product_sans)));
 
-        dStationName.setTypeface(Typeface.createFromAsset(getResources().getAssets(),"Product Sans Regular.ttf"));
+        dStationName.setTypeface(Typeface.createFromAsset(getResources().getAssets(),getString(R.string.product_sans)));
 
-        trainNoLabel.setTypeface(Typeface.createFromAsset(getResources().getAssets(),"Play-Regular.ttf"));
+        trainNoLabel.setTypeface(Typeface.createFromAsset(getResources().getAssets(),getString(R.string.play_reg)));
 
-        trainNo.setTypeface(Typeface.createFromAsset(getResources().getAssets(),"Play-Regular.ttf"));
+        trainNo.setTypeface(Typeface.createFromAsset(getResources().getAssets(),getString(R.string.play_reg)));
 
-        trainNameLabel.setTypeface(Typeface.createFromAsset(getResources().getAssets(),"Play-Regular.ttf"));
+        trainNameLabel.setTypeface(Typeface.createFromAsset(getResources().getAssets(),getString(R.string.play_reg)));
 
-        trainName.setTypeface(Typeface.createFromAsset(getResources().getAssets(),"Play-Regular.ttf"));
+        trainName.setTypeface(Typeface.createFromAsset(getResources().getAssets(),getString(R.string.play_reg)));
 
-        boardingStationCode.setTypeface(Typeface.createFromAsset(getResources().getAssets(),"Product Sans Regular.ttf"));
+        boardingStationCode.setTypeface(Typeface.createFromAsset(getResources().getAssets(),getString(R.string.product_sans)));
 
-        destinationStationCode.setTypeface(Typeface.createFromAsset(getResources().getAssets(),"Product Sans Regular.ttf"));
+        destinationStationCode.setTypeface(Typeface.createFromAsset(getResources().getAssets(),getString(R.string.product_sans)));
 
-        dOJLabel.setTypeface(Typeface.createFromAsset(getResources().getAssets(),"Product Sans Regular.ttf"));
+        dOJLabel.setTypeface(Typeface.createFromAsset(getResources().getAssets(),getString(R.string.product_sans)));
 
-        dOJ.setTypeface(Typeface.createFromAsset(getResources().getAssets(),"Product Sans Regular.ttf"));
+        dOJ.setTypeface(Typeface.createFromAsset(getResources().getAssets(),getString(R.string.product_sans)));
 
-        nOPLabel.setTypeface(Typeface.createFromAsset(getResources().getAssets(),"Product Sans Regular.ttf"));
+        nOPLabel.setTypeface(Typeface.createFromAsset(getResources().getAssets(),getString(R.string.product_sans)));
 
-        nOP.setTypeface(Typeface.createFromAsset(getResources().getAssets(),"Product Sans Regular.ttf"));
+        nOP.setTypeface(Typeface.createFromAsset(getResources().getAssets(),getString(R.string.product_sans)));
 
-        classLabel.setTypeface(Typeface.createFromAsset(getResources().getAssets(),"Product Sans Regular.ttf"));
+        classLabel.setTypeface(Typeface.createFromAsset(getResources().getAssets(),getString(R.string.product_sans)));
 
-        className.setTypeface(Typeface.createFromAsset(getResources().getAssets(),"Product Sans Regular.ttf"));
+        className.setTypeface(Typeface.createFromAsset(getResources().getAssets(),getString(R.string.product_sans)));
 
 
         ticketCard.setVisibility(View.GONE);
 
 
-        setReminderLabel.setTypeface(Typeface.createFromAsset(getResources().getAssets(),"Product Sans Regular.ttf"));
+        setReminderLabel.setTypeface(Typeface.createFromAsset(getResources().getAssets(),getString(R.string.product_sans)));
 
-        reminderTime.setTypeface(Typeface.createFromAsset(getResources().getAssets(),"Product Sans Regular.ttf"));
+        reminderTime.setTypeface(Typeface.createFromAsset(getResources().getAssets(),getString(R.string.product_sans)));
 
 
         mFireBaseAnalytics = FirebaseAnalytics.getInstance(this);
 
 
 if (savedInstanceState != null){
-    pnrInfo = savedInstanceState.getParcelable("pnr_info");
-    searchHappened = savedInstanceState.getBoolean("search_Status");
-    reminderTimeString = savedInstanceState.getString("reminder_time");
+    pnrInfo = savedInstanceState.getParcelable(getString(R.string.pnr_info));
+    searchHappened = savedInstanceState.getBoolean(getString(R.string.search_status_key));
+    reminderTimeString = savedInstanceState.getString(getString(R.string.reminder_time_s_key));
 
     if (searchHappened){
         instanciateViews(pnrInfo);
@@ -231,7 +231,7 @@ if (savedInstanceState != null){
        if (searchHappened){
         AlertDialog.Builder builder = new AlertDialog.Builder(AddTicket.this);
         builder.setTitle(R.string.save_ticket);
-        builder.setPositiveButton("Save", new DialogInterface.OnClickListener() {
+        builder.setPositiveButton(R.string.save, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
 
@@ -245,7 +245,7 @@ if (savedInstanceState != null){
 
             }
         });
-        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+        builder.setNegativeButton(R.string.cancel_text, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 finish();
@@ -328,15 +328,15 @@ if (savedInstanceState != null){
                     switch (networkResponseCode){
 
                         case 220:
-                            Crashlytics.log("Flushed Pnr");
+                            Crashlytics.log(getString(R.string.flushed_pnr));
                             Toast.makeText(getApplicationContext(), R.string.flushed_pnr, Toast.LENGTH_SHORT).show();
                             break;
                         case 221:
-                            Crashlytics.log("Invalid Pnr");
+                            Crashlytics.log(getString(R.string.invalid_pnr));
                             Toast.makeText(getApplicationContext(), R.string.invalid_pnr, Toast.LENGTH_SHORT).show();
                             break;
                         case 404:
-                            Crashlytics.log("Server Error");
+                            Crashlytics.log(getString(R.string.server_error_crashl));
                             Toast.makeText(AddTicket.this, R.string.server_error, Toast.LENGTH_SHORT).show();
                     }
                 }
@@ -345,7 +345,7 @@ if (savedInstanceState != null){
             @Override
             public void onFailure(Call<PNRInfo> call, Throwable t) {
                 searchHappened = false;
-                Crashlytics.log("Network Failure");
+                Crashlytics.log(getString(R.string.network_fail));
                 Toast.makeText(getApplicationContext(), R.string.network_error,Toast.LENGTH_SHORT).show();
 
             }

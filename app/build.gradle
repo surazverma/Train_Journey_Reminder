@@ -5,7 +5,7 @@ android {
     compileSdkVersion 26
     signingConfigs {
         release {
-            storeFile file("D:\\dump keystore\\dumpKeystore.jks")
+            storeFile file("keystore/dumpKeystore.jks")
             storePassword "dump1234"
             keyAlias "projectAndroidKey"
             keyPassword "dump1234"

@@ -52,6 +52,36 @@
     <string name="delete_button">Delete Button</string>
     <string name="uj_title">Upcoming Journey</string>
     <string name="at_title">Add Ticket</string>
+    <string name="your_upcoming_journey">Your Upcoming Journey</string>
+    <string name="not_text">Today you have to leave for your journey</string>
+    <string name="cancel_text">Cancel</string>
+    <string name="delete_option">Delete</string>
+    <string name="delete_quest">Delete Ticket?</string>
+    <string name="mobile_ad_id">ca-app-pub-3940256099942544~3347511713</string>
+    <string name="chart_status">chart_status</string>
+    <string name="boarding_point">boarding_point</string>
+    <string name="destination_point">destination_point</string>
+    <string name="passenger_data">passenger_data</string>
+    <string name="train_number">train_number</string>
+    <string name="number_of_passengers_key">number_of_passengers</string>
+    <string name="pnr_number">pnr_number</string>
+    <string name="train_name_key">train_name</string>
+    <string name="reminder_time_key">reminder_time</string>
+    <string name="ticket_id">ticket_id</string>
+    <string name="boarding_code">boarding_code</string>
+    <string name="destination_code">dest_code</string>
+    <string name="date_of_journey_key">date_of_journey</string>
+    <string name="class_name_key">class_name</string>
+    <string name="alarm_id">alarm_id</string>
+    <string name="class_code">class_code</string>
+    <string name="network_fail">Network Failure</string>
+    <string name="server_error_crashl">Server Error</string>
+    <string name="save">Save</string>
+    <string name="pnr_info">pnr_info</string>
+    <string name="search_status_key">search_Status</string>
+    <string name="reminder_time_s_key">reminder_time</string>
+    <string name="product_sans">Product Sans Regular.ttf</string>
+    <string name="play_reg">"Play-Regular.ttf"</string>
 
 
 </resources>

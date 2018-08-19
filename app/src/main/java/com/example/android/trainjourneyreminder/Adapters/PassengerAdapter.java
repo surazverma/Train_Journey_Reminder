@@ -106,7 +106,7 @@ public class PassengerAdapter extends RecyclerView.Adapter<PassengerAdapter.View
 
         public ViewHolder(View itemView){
             super(itemView);
-            standardFont = Typeface.createFromAsset(itemView.getContext().getAssets(),"Product Sans Regular.ttf");
+            standardFont = Typeface.createFromAsset(itemView.getContext().getAssets(), itemView.getContext().getString(R.string.product_sans));
 
             bs_label = (TextView) itemView.findViewById(R.id.bs_label);
             bs_label.setTypeface(standardFont);

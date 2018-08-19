@@ -32,8 +32,8 @@ public static final String NOTIFICATION_CHANNEL_ID = "reminder_notification_chan
 
         NotificationCompat.Builder mBuilder =  new NotificationCompat.Builder(context,NOTIFICATION_CHANNEL_ID)
                 .setSmallIcon(R.drawable.ic_baseline_train_24px)
-                .setContentTitle("Your Upcoming Journey")
-                .setContentText("Today you have to leave for your journey")
+                .setContentTitle(context.getString(R.string.your_upcoming_journey))
+                .setContentText(context.getString(R.string.not_text))
                 .setDefaults(Notification.DEFAULT_VIBRATE)
                 .setDefaults(Notification.DEFAULT_SOUND)
                 .setAutoCancel(true);

@@ -82,8 +82,8 @@ public class TicketCursorAdapter extends CursorAdapter {
 
 
 
-        Typeface overlineFont = Typeface.createFromAsset(view.getContext().getAssets(),"Play-Regular.ttf");
-        Typeface standardFont = Typeface.createFromAsset(view.getContext().getAssets(),"Product Sans Regular.ttf");
+        Typeface overlineFont = Typeface.createFromAsset(view.getContext().getAssets(),context.getString(R.string.play_reg));
+        Typeface standardFont = Typeface.createFromAsset(view.getContext().getAssets(),context.getString(R.string.product_sans));
         final String classCode = cursor.getString(classCodeIndex);
 
 
@@ -117,21 +117,21 @@ public class TicketCursorAdapter extends CursorAdapter {
             public void onClick(View v) {
                 Intent ticketInfoIntent = new Intent(context, TicketInfoActivity.class);
 
-                ticketInfoIntent.putExtra("destination_point",destinationPoint);
-                ticketInfoIntent.putExtra("boarding_point",boardingPoint);
-                ticketInfoIntent.putExtra("train_number",trainNumber);
-                ticketInfoIntent.putExtra("passenger_data",passengerData);
-                ticketInfoIntent.putExtra("reminder_time",reminderTime);
-                ticketInfoIntent.putExtra("pnr_number",pnrNumber);
-                ticketInfoIntent.putExtra("train_name",trainName);
-                ticketInfoIntent.putExtra("ticket_id",ticketID);
-                ticketInfoIntent.putExtra("boarding_code",boardingCode);
-                ticketInfoIntent.putExtra("dest_code",destCode);
-                ticketInfoIntent.putExtra("date_of_journey",doj);
-                ticketInfoIntent.putExtra("class_name",className);
-                ticketInfoIntent.putExtra("class_code",classCode);
-                ticketInfoIntent.putExtra("alarm_id",alarmID);
-                ticketInfoIntent.putExtra("number_of_passengers",numberOfPassengers);
+                ticketInfoIntent.putExtra(context.getString(R.string.destination_point),destinationPoint);
+                ticketInfoIntent.putExtra(context.getString(R.string.boarding_point),boardingPoint);
+                ticketInfoIntent.putExtra(context.getString(R.string.train_number),trainNumber);
+                ticketInfoIntent.putExtra(context.getString(R.string.passenger_data),passengerData);
+                ticketInfoIntent.putExtra(context.getString(R.string.reminder_time_key),reminderTime);
+                ticketInfoIntent.putExtra(context.getString(R.string.pnr_number),pnrNumber);
+                ticketInfoIntent.putExtra(context.getString(R.string.train_name_key),trainName);
+                ticketInfoIntent.putExtra(context.getString(R.string.ticket_id),ticketID);
+                ticketInfoIntent.putExtra(context.getString(R.string.boarding_code),boardingCode);
+                ticketInfoIntent.putExtra(context.getString(R.string.destination_code),destCode);
+                ticketInfoIntent.putExtra(context.getString(R.string.date_of_journey_key),doj);
+                ticketInfoIntent.putExtra(context.getString(R.string.class_name_key),className);
+                ticketInfoIntent.putExtra(context.getString(R.string.class_code),classCode);
+                ticketInfoIntent.putExtra(context.getString(R.string.alarm_id),alarmID);
+                ticketInfoIntent.putExtra(context.getString(R.string.number_of_passengers_key),numberOfPassengers);
                 Activity activity = (Activity) context;
 
                 activity.startActivity(ticketInfoIntent);

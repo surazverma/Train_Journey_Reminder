@@ -51,7 +51,7 @@ public class TicketInfoActivity extends AppCompatActivity {
     private int monthValue;
     private int dateValue;
     private int yearValue;
-
+    private static final String BASE_URL = "https://api.railwayapi.com/v2/pnr-status/";
     private PNRInfo pnrInfo;
     private Integer networkResponseCode;
     private List<Passenger> passengers;
@@ -115,30 +115,30 @@ public class TicketInfoActivity extends AppCompatActivity {
         setContentView(R.layout.activity_ticket_info);
         ButterKnife.bind(this);
         Bundle infoBundle = getIntent().getExtras();
-        chartStatus = infoBundle.getBoolean("chart_status");
-        infoBoardingPoint = infoBundle.getString("boarding_point");
-        infoDestinationPoint = infoBundle.getString("destination_point");
-        infoPassengerData = infoBundle.getString("passenger_data");
-        infoTicketTrainNumber = infoBundle.getInt("train_number");
-        infoNumberOfPassengers = infoBundle.getInt("number_of_passengers");
-        infoPnrNumber = infoBundle.getString("pnr_number");
-        infoTrainName = infoBundle.getString("train_name");
-        infoReminderTime = infoBundle.getString("reminder_time");
-        infoTicketIDValue = infoBundle.getInt("ticket_id");
-        infoBoardingCode = infoBundle.getString("boarding_code");
-        infoDestCode = infoBundle.getString("dest_code");
-        infoDOJ = infoBundle.getString("date_of_journey");
-        infoClassName = infoBundle.getString("class_name");
-        infoAlarmId = infoBundle.getInt("alarm_id");
-        infoClassCode = infoBundle.getString("class_code");
+        chartStatus = infoBundle.getBoolean(getString(R.string.chart_status));
+        infoBoardingPoint = infoBundle.getString(getString(R.string.boarding_point));
+        infoDestinationPoint = infoBundle.getString(getString(R.string.destination_point));
+        infoPassengerData = infoBundle.getString(getString(R.string.passenger_data));
+        infoTicketTrainNumber = infoBundle.getInt(getString(R.string.train_number));
+        infoNumberOfPassengers = infoBundle.getInt(getString(R.string.number_of_passengers_key));
+        infoPnrNumber = infoBundle.getString(getString(R.string.pnr_number));
+        infoTrainName = infoBundle.getString(getString(R.string.train_name_key));
+        infoReminderTime = infoBundle.getString(getString(R.string.reminder_time_key));
+        infoTicketIDValue = infoBundle.getInt(getString(R.string.ticket_id));
+        infoBoardingCode = infoBundle.getString(getString(R.string.boarding_code));
+        infoDestCode = infoBundle.getString(getString(R.string.destination_code));
+        infoDOJ = infoBundle.getString(getString(R.string.date_of_journey_key));
+        infoClassName = infoBundle.getString(getString(R.string.class_name_key));
+        infoAlarmId = infoBundle.getInt(getString(R.string.alarm_id));
+        infoClassCode = infoBundle.getString(getString(R.string.class_code));
         infoTicketID = String.valueOf(infoTicketIDValue);
 
-        dOJLableTV.setTypeface(Typeface.createFromAsset(getResources().getAssets(),"Product Sans Regular.ttf"));
-        NOPLabelTV.setTypeface(Typeface.createFromAsset(getResources().getAssets(),"Product Sans Regular.ttf"));
-        infoReserveLabelTV.setTypeface(Typeface.createFromAsset(getResources().getAssets(),"Product Sans Regular.ttf"));
-        infoReminderTimeTV.setTypeface(Typeface.createFromAsset(getResources().getAssets(),"Product Sans Regular.ttf"));
-        infoNOPTV.setTypeface(Typeface.createFromAsset(getResources().getAssets(),"Product Sans Regular.ttf"));
-        infoClassNameLabelTV.setTypeface(Typeface.createFromAsset(getResources().getAssets(),"Product Sans Regular.ttf"));
+        dOJLableTV.setTypeface(Typeface.createFromAsset(getResources().getAssets(),getString(R.string.product_sans)));
+        NOPLabelTV.setTypeface(Typeface.createFromAsset(getResources().getAssets(),getString(R.string.product_sans)));
+        infoReserveLabelTV.setTypeface(Typeface.createFromAsset(getResources().getAssets(),getString(R.string.product_sans)));
+        infoReminderTimeTV.setTypeface(Typeface.createFromAsset(getResources().getAssets(),getString(R.string.product_sans)));
+        infoNOPTV.setTypeface(Typeface.createFromAsset(getResources().getAssets(),getString(R.string.product_sans)));
+        infoClassNameLabelTV.setTypeface(Typeface.createFromAsset(getResources().getAssets(),getString(R.string.product_sans)));
         gson = new Gson();
         Type listType = new TypeToken<List<Passenger>>() {
         }.getType();
@@ -148,7 +148,7 @@ public class TicketInfoActivity extends AppCompatActivity {
         passengerRv.setAdapter(new PassengerAdapter(getApplicationContext(), passengers,chartStatus));
 
         MobileAds.initialize(this,
-                "ca-app-pub-3940256099942544~3347511713");
+                getString(R.string.mobile_ad_id));
 
         mAdView = findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
@@ -164,35 +164,35 @@ public class TicketInfoActivity extends AppCompatActivity {
 
 
         infoPnrTV.setText(infoPnrNumber);
-        infoPnrTV.setTypeface(Typeface.createFromAsset(getResources().getAssets(),"Product Sans Regular.ttf"));
+        infoPnrTV.setTypeface(Typeface.createFromAsset(getResources().getAssets(),getString(R.string.product_sans)));
 
         infoTrainNameTV.setText(infoTrainName);
-        infoTrainNameTV.setTypeface(Typeface.createFromAsset(getResources().getAssets(),"Product Sans Regular.ttf"));
+        infoTrainNameTV.setTypeface(Typeface.createFromAsset(getResources().getAssets(),getString(R.string.product_sans)));
 
         infoBoardTV.setText(infoBoardingCode);
-        infoBoardTV.setTypeface(Typeface.createFromAsset(getResources().getAssets(),"Product Sans Regular.ttf"));
+        infoBoardTV.setTypeface(Typeface.createFromAsset(getResources().getAssets(),getString(R.string.product_sans)));
 
         infoDestTV.setText(infoDestCode);
-        infoDestTV.setTypeface(Typeface.createFromAsset(getResources().getAssets(),"Product Sans Regular.ttf"));
+        infoDestTV.setTypeface(Typeface.createFromAsset(getResources().getAssets(),getString(R.string.product_sans)));
 
 
         infoDOJTV.setText(infoDOJ);
-        infoDOJTV.setTypeface(Typeface.createFromAsset(getResources().getAssets(),"Product Sans Regular.ttf"));
+        infoDOJTV.setTypeface(Typeface.createFromAsset(getResources().getAssets(),getString(R.string.product_sans)));
 
         infoClassTV.setText(infoClassCode);
-        infoClassTV.setTypeface(Typeface.createFromAsset(getResources().getAssets(),"Product Sans Regular.ttf"));
+        infoClassTV.setTypeface(Typeface.createFromAsset(getResources().getAssets(),getString(R.string.product_sans)));
         infoBoardingPointTV.setText(infoBoardingPoint);
-        infoBoardingPointTV.setTypeface(Typeface.createFromAsset(getResources().getAssets(),"Product Sans Regular.ttf"));
+        infoBoardingPointTV.setTypeface(Typeface.createFromAsset(getResources().getAssets(),getString(R.string.product_sans)));
         infoDestinationPointTV.setText(infoDestinationPoint);
-        infoDestinationPointTV.setTypeface(Typeface.createFromAsset(getResources().getAssets(),"Product Sans Regular.ttf"));
+        infoDestinationPointTV.setTypeface(Typeface.createFromAsset(getResources().getAssets(),getString(R.string.product_sans)));
         infoTrainNumberTV.setText(String.valueOf(infoTicketTrainNumber));
-        infoTrainNumberTV.setTypeface(Typeface.createFromAsset(getResources().getAssets(),"Product Sans Regular.ttf"));
+        infoTrainNumberTV.setTypeface(Typeface.createFromAsset(getResources().getAssets(),getString(R.string.product_sans)));
         infoNOPTV.setText(String.valueOf(infoNumberOfPassengers));
 
 
 
         infoReminderTimeTV.setText(infoReminderTime);
-        infoReminderTimeTV.setTypeface(Typeface.createFromAsset(getResources().getAssets(),"Product Sans Regular.ttf"));
+        infoReminderTimeTV.setTypeface(Typeface.createFromAsset(getResources().getAssets(),getString(R.string.product_sans)));
         timeLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -247,8 +247,8 @@ public class TicketInfoActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 AlertDialog.Builder builder = new AlertDialog.Builder(TicketInfoActivity.this);
-                builder.setMessage("Delete Ticket?");
-                builder.setPositiveButton("Delete", new DialogInterface.OnClickListener() {
+                builder.setMessage(R.string.delete_quest);
+                builder.setPositiveButton(R.string.delete_option, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         getContentResolver().delete(TicketContract.TicketEntry.CONTENT_URI.buildUpon().appendPath(infoTicketID).build(), null, null);
@@ -259,7 +259,7 @@ public class TicketInfoActivity extends AppCompatActivity {
                     }
 
                 });
-                builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                builder.setNegativeButton(R.string.cancel_text, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                     }
@@ -279,7 +279,7 @@ public class TicketInfoActivity extends AppCompatActivity {
     private void executeSearch(String pnrNumber, final String ticketId){
         Retrofit.Builder builder = new Retrofit
                 .Builder()
-                .baseUrl("https://api.railwayapi.com/v2/pnr-status/")
+                .baseUrl(BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create());
         Retrofit retrofit = builder.build();
 
