@@ -2,7 +2,7 @@
 
 ## Description
 Train Journey Reminder is developed for the users who travel a lot from Indian railways. This application will remind users about their upcoming journey.
-The user has to enter the PNR number, to check and save all the info as a reminder where date is the journey date and the time is selected by the user. This application is a submition as a Capstone Project for Udacity.
+The user has to enter the PNR number, to check and save all the info as a reminder where date is the journey date and the time is selected by the user. This application is a submission as a Capstone Project for Udacity.
 
 ## Features
 * Search passenger information
