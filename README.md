@@ -9,7 +9,7 @@ The user has to enter the PNR number, to check and save all the info as a remind
 * Save passenger information as a reminder
 * Update passenger information
 * Get notification reminder abouth the upcoming journey
-* Delete Reminder
+* Delete Reminder.
 * All the data is saved in a local database.
 * The user interface is made according to the [Material Design Principles](https://material.io/design/introduction/).
 
@@ -20,10 +20,10 @@ The user has to enter the PNR number, to check and save all the info as a remind
 <img src="../master/Screenshot/Screen_1.png" width="200"><img src="../master/Screenshot/Screen_4.png" width="200"><img src="../master/Screenshot/Screen_5.png" width="200"><img src="../master/Screenshot/Screen_6.png" width="200"><img src="../master/Screenshot/Screen_2.png" width="200">
 <img src="../master/Screenshot/Screen_3.png" width="400">
 
-## Tools and Libraries Used
-* [Retrofit](https://square.github.io/retrofit/)
-* [Firebase Crashlytics](https://firebase.google.com/docs/crashlytics/)
-* [ButterKnife](https://jakewharton.github.io/butterknife/)
-* [Google Admob](https://developers.google.com/admob/)
+## Libraries Used
+* [Retrofit](https://square.github.io/retrofit/) - Retrofit library is used to handle the network related calls.
+* [Firebase Crashlytics](https://firebase.google.com/docs/crashlytics/) - Firebase Crashlytics is used as for crash reporting and project analytics.
+* [ButterKnife](https://jakewharton.github.io/butterknife/) - Butterknife is used to reduce the boilerplate code from the project.
+* [Google Admob](https://developers.google.com/admob/) - Google Admob is used to add an advertisment example in the project.
 
 
